@@ -5,11 +5,19 @@
 
 
 📦 Tech Stack
+
 Java 11
+
 Spring Boot
+
 PostgreSQL
+
 Lombok
+
+Spring Security
+
 JPA/Hibernate
+
 Maven
 
 ---
