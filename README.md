@@ -23,6 +23,7 @@ Maven
 ---
 
 Features ✨
+
 JWT authentication and role-based access control
 
 Wallet balance management
@@ -40,6 +41,7 @@ Transactional integrity with atomic operations
 ---
 
 Architecture Decisions 🏗️
+
 Key Components
 Sql Database: Chosen for ACID compliance in financial transactions
 
@@ -66,6 +68,7 @@ and idempotent operations, with optimized SQL indexes ensuring performance for f
 
 ASSUMPTIONS:
 
+
 Single-Currency Focus: Primarily handles Nigerian Naira (NGN), with amounts stored in base units (e.g., 100 Naira = 10000 kobo for Paystack).
 
 Moderate Transaction Volume: Designed for typical usage (not high-frequency trading), with optimistic locking for concurrency.
@@ -80,6 +83,7 @@ Trusted Client Validation: Input sanitization and security are backend-focused, 
 ---
 
 📋 Prerequisites
+
 Ensure the following tools are installed on your machine before running the application:
 
 Java 11 or newer (required for building and running the Spring Boot application)
@@ -102,7 +106,9 @@ Install PostgreSQL
 
 Install PostgreSQL from PostgreSQL’s official website.
 
+
 ⚙️ Build and Run
+
 1. Clone the Repository
 git clone https://github.com/your-username/Nano_Purse.git
 
@@ -110,7 +116,6 @@ cd Nano_Purse
 
 
 ---
-
 
 
 API Documentation 📖
