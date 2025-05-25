@@ -75,19 +75,36 @@ Trusted Client Validation: Input sanitization and security are backend-focused, 
 Ensure the following tools are installed on your machine before running the application:
 
 Java 11 or newer (required for building and running the Spring Boot application)
+
 Maven (for dependency management and building)
+
 PostgreSQL (for database)
+
 Git (to clone the repository)
+
 Install Java 11
+
 Download and install from Oracle’s official website or use your preferred package manager.
+
 Install Maven
+
 Download Maven from Maven's official website or use package managers like apt (Linux), brew (Mac), etc.
+
 Install PostgreSQL
+
 Install PostgreSQL from PostgreSQL’s official website.
+
 ⚙️ Build and Run
 1. Clone the Repository
-git clone https://github.com/your-username/payment-processing-system.git
-cd payment-processing-system
+git clone https://github.com/your-username/Nano_Purse.git
+
+cd Nano_Purse
+
+
+---
+
+
+
 API Documentation 📖
 http://localhost:8081/swagger-ui.html
 
