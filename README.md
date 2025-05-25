@@ -1,4 +1,8 @@
-A secure digital wallet API with Paystack integration for seamless money transfers and financial tracking.
+# Nano_Purse
+ A secure digital wallet API built with **Spring Boot**  with Paystack integration for seamless money transfers and financial tracking.
+
+---
+
 
 📦 Tech Stack
 Java 11
@@ -8,6 +12,7 @@ Lombok
 JPA/Hibernate
 Maven
 
+---
 
 Features ✨
 JWT authentication and role-based access control
@@ -24,6 +29,7 @@ Transaction history tracking
 
 Transactional integrity with atomic operations
 
+---
 
 Architecture Decisions 🏗️
 Key Components
@@ -47,6 +53,8 @@ while supporting both synchronous peer transfers and asynchronous Paystack bank 
 
 and idempotent operations, with optimized SQL indexes ensuring performance for financial data operations.
 
+---
+
 
 ASSUMPTIONS:
 
@@ -59,6 +67,9 @@ Paystack as Primary Processor: Relies on Paystack for external transfers, with w
 One Wallet per User: Enforces a strict one-to-one user-wallet relationship for simplicity.
 
 Trusted Client Validation: Input sanitization and security are backend-focused, assuming clients pass validated requests.
+
+
+---
 
 API Documentation 📖
 http://localhost:8081/swagger-ui.html
