@@ -69,15 +69,21 @@ and idempotent operations, with optimized SQL indexes ensuring performance for f
 ASSUMPTIONS:
 
 
-Single-Currency Focus: Primarily handles Nigerian Naira (NGN), with amounts stored in base units (e.g., 100 Naira = 10000 kobo for Paystack).
+Single-Currency Support: The application is tailored for the Nigerian Naira (NGN), with all monetary values stored in base units 
+(e.g., ₦100 is represented as 10,000 kobo, in line with Paystack's standards).
 
-Moderate Transaction Volume: Designed for typical usage (not high-frequency trading), with optimistic locking for concurrency.
+Moderate Transaction Load: Optimized for standard usage scenarios rather than high-frequency trading. 
+It employs optimistic locking to ensure safe concurrent updates.
 
-Paystack as Primary Processor: Relies on Paystack for external transfers, with webhook-based status updates.
+Paystack Integration for External Transfers: Paystack serves as the primary payment gateway for handling external transactions. 
+The system uses webhooks to receive and process transaction status updates reliably.
 
-One Wallet per User: Enforces a strict one-to-one user-wallet relationship for simplicity.
+Transaction Fees: For every external transfer, an estimated transaction fee is automatically applied based on the transfer amount.
+This ensures transparency and helps cover processing costs.
 
-Trusted Client Validation: Input sanitization and security are backend-focused, assuming clients pass validated requests.
+Strict One-to-One Wallet Mapping: Each user is associated with exactly one wallet, ensuring a simplified and consistent wallet management model.
+
+Backend-Centric Validation: Security and input validation are handled primarily at the backend, under the assumption that requests from clients have already been pre-validated and sanitized.
 
 
 ---
