@@ -30,6 +30,4 @@ public class TransferController {
         payStackService.handleTransferWebhook(event);
         return ResponseEntity.ok("Webhook processed");
     }
-
-
 }
