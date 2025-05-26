@@ -102,4 +102,5 @@ public class SecurityConfiguration {
     public RateLimitingFilter rateLimitingFilterInstance() {
         return new RateLimitingFilter();
     }
+
 }
