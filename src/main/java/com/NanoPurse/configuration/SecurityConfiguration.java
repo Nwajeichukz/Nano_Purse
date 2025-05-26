@@ -93,7 +93,7 @@ public class SecurityConfiguration {
     public FilterRegistrationBean<RateLimitingFilter> rateLimitingFilter(RateLimitingFilter filter) {
         FilterRegistrationBean<RateLimitingFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(filter);
-        registrationBean.addUrlPatterns("/transfer/*", "/wallet/*", "/auth/*");
+        registrationBean.addUrlPatterns("/transfer/*");
         registrationBean.setOrder(2);
         return registrationBean;
     }
