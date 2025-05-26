@@ -46,14 +46,42 @@ Rate Limiting: Protect the system and users by limiting request frequency on sen
 
 # Architecture Decisions 🏗️
 
-Nano_Purse employs a clean, layered architecture that promotes scalability and maintainability:
+Nano_Purse employs a clean, layered architecture designed for scalability, maintainability, and clear separation of concerns. 
+This modular approach allows each layer to focus on specific responsibilities, improving testability and enabling easier future enhancements.
 
-Controller Layer: Handles HTTP requests/responses and enforces security rules.
+Layer Breakdown:
+Controller Layer:
+Handles HTTP requests and responses, enforces security policies, and performs input validation at the API boundary.
+It acts as the interface between external clients and the backend system.
 
-Service Layer: Encapsulates business logic, transaction processing, and external API interactions.
+Service Layer:
+Contains core business logic, including wallet management, transaction processing, fee calculation, and integration with external services like Paystack. 
+This layer orchestrates workflows and ensures transactional integrity.
 
-Repository Layer: Manages data persistence through JPA/Hibernate abstractions.
+Repository Layer:
+Provides data access via JPA/Hibernate to interact with the PostgreSQL database. 
+It abstracts persistence operations and supports efficient querying and updates with optimistic locking.
 
+Configuration Layer:
+Centralizes application configuration, including security settings, rate limiting policies, API clients (e.g., Paystack), and other beans required throughout the application lifecycle. 
+This layer ensures clean setup and dependency injection.
+
+Utils Layer:
+Provides reusable utility classes and helper functions, such as formatting currency amounts, date/time handling, cryptographic utilities, and other common operations used across multiple layers.
+
+DTO (Data Transfer Object) Layer:
+Defines request and response objects used for API communication. DTOs encapsulate data structures sent to and from clients,
+ensuring clear API contracts and decoupling internal domain models from external representations.
+
+Factory Layer:
+Implements object creation patterns for complex domain objects or DTOs, managing initialization logic and promoting immutability or validation before creation.
+This layer improves maintainability and consistency in object construction.
+
+Model Layer:
+Represents the core domain entities such as User, Wallet, Transaction, etc. These are the business objects persisted in the database and manipulated by the service layer.
+
+Exception Layer:
+Contains custom exceptions, error codes, and global exception handlers that provide consistent error responses and centralized error management across the API.
 
 
 # Design Decisions:
