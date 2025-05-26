@@ -85,6 +85,11 @@ Strict One-to-One Wallet Mapping: Each user is associated with exactly one walle
 
 Backend-Centric Validation: Security and input validation are handled primarily at the backend, under the assumption that requests from clients have already been pre-validated and sanitized.
 
+Rate Limiting: To protect system stability and prevent abuse, rate limiting is enforced on critical endpoints, controlling the number of allowed requests per user within defined time windows 
+in line with the moderate transaction load assumption.
+
+
+
 
 ---
 
