@@ -1,6 +1,6 @@
 # Nano_Purse
- A secure digital wallet API built with **Spring Boot**  with Paystack integration for seamless money transfers and financial tracking.
 
+A secure, scalable digital wallet API built with Spring Boot — featuring seamless Paystack integration for effortless money transfers and comprehensive financial tracking.
 ---
 
 
@@ -22,46 +22,51 @@ Maven
 
 ---
 
-Features ✨
+# ✨ Features & Highlights
 
-JWT authentication and role-based access control
 
-Wallet balance management
+JWT Authentication & Role-Based Access Control: Secure, stateless authentication with flexible permission handling.
 
-Peer-to-peer transfers
+Wallet Balance Management: Maintain accurate, real-time balances with optimistic locking to prevent race conditions.
 
-Bank transfers via Paystack integration
+Peer-to-Peer Transfers: Fast, atomic transactions between users within the platform.
 
-Transaction history tracking
+Bank Transfers via Paystack Integration: Effortlessly send funds externally with full webhook support for asynchronous transaction status updates.
 
- Webhook integration for real-time status updates
+Comprehensive Transaction History: Detailed audit trails for every wallet operation.
 
-Transactional integrity with atomic operations
+Transactional Integrity: All critical operations are atomic and consistent, ensuring financial data safety.
+
+Webhook-Driven Real-Time Updates: Stay synchronized with Paystack events for up-to-the-second status accuracy.
+
+Rate Limiting: Protect the system and users by limiting request frequency on sensitive endpoints.
+
 
 ---
 
-Architecture Decisions 🏗️
+# Architecture Decisions 🏗️
 
-Key Components
-Sql Database: Chosen for ACID compliance in financial transactions
+Nano_Purse employs a clean, layered architecture that promotes scalability and maintainability:
 
-JPA/Hibernate: ORM for simplified data access
+Controller Layer: Handles HTTP requests/responses and enforces security rules.
 
-Paystack Integration: REST API + webhooks for async updates
+Service Layer: Encapsulates business logic, transaction processing, and external API interactions.
 
-Optimistic Locking: Prevents concurrent balance updates
+Repository Layer: Manages data persistence through JPA/Hibernate abstractions.
 
-Modular Services: Clean separation of concerns
+Design Decisions:
 
-The NanoPurse Wallet API employs a layered Spring Boot architecture with SQL database persistence, featuring one-to-one user-wallet relationships .
+ACID-Compliant PostgreSQL Database: Ensures transaction safety and data integrity essential for financial applications.
 
-The design separates concerns into controller (HTTP handling), service (business logic including transaction processing), and repository (JPA/Hibernate data access) layers, 
+Optimistic Locking: Prevents concurrent balance update conflicts without heavy locking overhead.
 
-utilizing JWT for authentication, optimistic locking for concurrency control, and DTOs for API contracts. Financial operations maintain ACID compliance through @Transactional atomic processing, 
+Modular Service Design: Separates concerns clearly, enabling easier testing and feature expansion.
 
-while supporting both synchronous peer transfers and asynchronous Paystack bank transactions via webhooks. Security is enforced through multi-layered validation, method authorization,
+JWT-Based Security: Supports stateless sessions with role-based access control for fine-grained authorization.
 
-and idempotent operations, with optimized SQL indexes ensuring performance for financial data operations.
+DTO Usage: Enforces clear API contracts and reduces exposure of internal entities.
+
+Efficient SQL Indexing: Optimizes query performance for high-throughput wallet operations.
 
 ---
 
