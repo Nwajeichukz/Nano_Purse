@@ -54,7 +54,9 @@ Service Layer: Encapsulates business logic, transaction processing, and external
 
 Repository Layer: Manages data persistence through JPA/Hibernate abstractions.
 
-Design Decisions:
+
+
+# Design Decisions:
 
 ACID-Compliant PostgreSQL Database: Ensures transaction safety and data integrity essential for financial applications.
 
@@ -71,7 +73,7 @@ Efficient SQL Indexing: Optimizes query performance for high-throughput wallet o
 ---
 
 
-ASSUMPTIONS:
+# ASSUMPTIONS:
 
 
 Single-Currency Support: The application is tailored for the Nigerian Naira (NGN), with all monetary values stored in base units 
@@ -98,7 +100,7 @@ in line with the moderate transaction load assumption.
 
 ---
 
-📋 Prerequisites
+# 📋 Prerequisites
 
 Ensure the following tools are installed on your machine before running the application:
 
